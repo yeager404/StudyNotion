@@ -6,7 +6,7 @@ const User = require("../models/User.model.js")
 const { uploadImageToCloudinary } = require("../utils/imageUploader")
 const CourseProgress = require("../models/CourseProgress.model.js")
 const { convertSecondsToDuration } = require("../utils/secToDuration")
-// Function to create a new course
+// Controller to create a new course
 exports.createCourse = async (req, res) => {
   try {
     // Get user ID from request object
@@ -131,7 +131,7 @@ exports.createCourse = async (req, res) => {
     })
   }
 }
-// Edit Course Details
+// Controller for editing Course Details
 exports.editCourse = async (req, res) => {
   try {
     const { courseId } = req.body
@@ -199,7 +199,7 @@ exports.editCourse = async (req, res) => {
     })
   }
 }
-// Get Course List
+// Controller for getting Course List
 exports.getAllCourses = async (req, res) => {
   try {
     const allCourses = await Course.find(
@@ -363,7 +363,7 @@ exports.getFullCourseDetails = async (req, res) => {
   }
 }
 
-// Get a list of Course for a given Instructor
+// Controller to get a list of Course for a given Instructor
 exports.getInstructorCourses = async (req, res) => {
   try {
     // Get the instructor ID from the authenticated user or request body
@@ -389,7 +389,7 @@ exports.getInstructorCourses = async (req, res) => {
     })
   }
 }
-// Delete the Course
+// Controller to delete the Course
 exports.deleteCourse = async (req, res) => {
   try {
     const { courseId } = req.body

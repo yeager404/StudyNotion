@@ -3,7 +3,6 @@ const Section = require("../models/Section.model.js")
 const SubSection = require("../models/Subsection.model.js")
 const { uploadImageToCloudinary } = require("../utils/imageUploader")
 
-// Create a new sub-section for a given section
 exports.createSubSection = async (req, res) => {
   try {
     // Extract necessary information from the request body

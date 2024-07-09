@@ -12,6 +12,9 @@ export default function CourseAccordionBar({ course, isActive, handleActive }) {
     setActive(isActive?.includes(course._id))
   }, [isActive])
   const [sectionHeight, setSectionHeight] = useState(0)
+
+  // scrollHeight is the full height of the content if it is displayed all at once without any 
+
   useEffect(() => {
     setSectionHeight(active ? contentEl.current.scrollHeight : 0)
   }, [active])

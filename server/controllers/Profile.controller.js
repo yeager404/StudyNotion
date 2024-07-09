@@ -6,7 +6,7 @@ const User = require("../models/User.model.js")
 const { uploadImageToCloudinary } = require("../utils/imageUploader.js")
 const mongoose = require("mongoose")
 const { convertSecondsToDuration } = require("../utils/secToDuration.js")
-// Method for updating a profile
+// Controller for updating a profile
 exports.updateProfile = async (req, res) => {
   try {
     const {

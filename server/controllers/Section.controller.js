@@ -1,7 +1,7 @@
 const Section = require("../models/Section.model")
 const Course = require("../models/Course.model")
 const SubSection = require("../models/Subsection.model")
-// CREATE a new section
+// Controller to create a new section
 exports.createSection = async (req, res) => {
   try {
     // Extract the required properties from the request body
@@ -52,7 +52,7 @@ exports.createSection = async (req, res) => {
   }
 }
 
-// UPDATE a section
+// Controller to update a section
 exports.updateSection = async (req, res) => {
   try {
     const { sectionName, sectionId, courseId } = req.body
@@ -85,7 +85,7 @@ exports.updateSection = async (req, res) => {
   }
 }
 
-// DELETE a section
+//Controller for deleting a section
 exports.deleteSection = async (req, res) => {
   try {
     const { sectionId, courseId } = req.body

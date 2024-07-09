@@ -1,8 +1,7 @@
-// Importing required modules
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const User = require("../models/User.model");
-// Configuring dotenv to load environment variables from .env file
+
 dotenv.config();
 
 // This function is used as middleware to authenticate user requests
@@ -52,6 +51,7 @@ exports.isStudent = async (req, res, next) => {
         message: "This is a Protected Route for Students",
       });
     }
+    // if we call next() outside the try block then there is no authentication involved anymore as the process continues
     next();
   } catch (error) {
     return res

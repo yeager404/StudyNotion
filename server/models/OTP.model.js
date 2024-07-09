@@ -21,14 +21,12 @@ const OTPSchema = new mongoose.Schema({
 async function sendVerificationEmail(email, otp) {
 	// Create a transporter to send emails
 
-	// Define the email options
-
 	// Send the email
 	try {
 		const mailResponse = await mailSender(
 			email,
 			"Verification Email",
-			emailTemplate(otp)
+			emailTemplate(otp) // here otp is being sent aa a prop
 		);
 		console.log("Email sent successfully: ", mailResponse.response);
 	} catch (error) {

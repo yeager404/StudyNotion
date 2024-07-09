@@ -8,11 +8,10 @@ const { passwordUpdated } = require("../mail/templates/passwordUpdate");
 const Profile = require("../models/Profile.model");
 require("dotenv").config();
 
-// Signup Controller for Registering USers
-
+// Signup Controller
 exports.signup = async (req, res) => {
   try {
-    // Destructure fields from the request body
+    // Get fields from the request body
     const {
       firstName,
       lastName,
@@ -23,7 +22,7 @@ exports.signup = async (req, res) => {
       contactNumber,
       otp,
     } = req.body;
-    // Check if All Details are there or not
+    //validate presence of all fields
     if (
       !firstName ||
       !lastName ||
@@ -266,7 +265,6 @@ exports.changePassword = async (req, res) => {
       );
       console.log("Email sent successfully:", emailResponse.response);
     } catch (error) {
-      // If there's an error sending the email, log the error and return a 500 (Internal Server Error) error
       console.error("Error occurred while sending email:", error);
       return res.status(500).json({
         success: false,
@@ -275,7 +273,6 @@ exports.changePassword = async (req, res) => {
       });
     }
 
-    // Return success response
     return res
       .status(200)
       .json({ success: true, message: "Password updated successfully" });

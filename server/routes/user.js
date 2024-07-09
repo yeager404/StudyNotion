@@ -1,4 +1,3 @@
-// Import the required modules
 const express = require("express")
 const router = express.Router()
 
@@ -18,7 +17,7 @@ const { auth } = require("../middleware/auth.middleware")
 
 // Routes for Login, Signup, and Authentication
 
-//              Authentication routes
+//  Authentication routes
 
 
 // Route for user login
@@ -33,7 +32,7 @@ router.post("/sendotp", sendotp)
 // Route for Changing the password
 router.post("/changepassword", auth, changePassword)
 
-//                                      Reset Password
+// Reset Password
 
 
 // Route for generating a reset password token
